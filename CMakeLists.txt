@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.16)
+
+set(PROJECT_NAME SpaceIsBlueEngineExample)
+set(ENGINE_NAME SpaceIsBlueEngine)
+
+project(${PROJECT_NAME} LANGUAGES CXX VERSION 0.0.1)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED true)
+
+file(GLOB_RECURSE SOURCE_FILES
+     "src/*.cpp"
+)
+
+add_subdirectory(${ENGINE_NAME})
+
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+
+target_link_libraries(${PROJECT_NAME} ${ENGINE_NAME})
