@@ -1,0 +1,3 @@
+[submodule "SpaceIsBlueEngine"]
+	path = SpaceIsBlueEngine
+	url = https://github.com/darkbluea/SpaceIsBlueEngine.git
